@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/calculator")
 public class CreditBankController {
@@ -29,7 +31,7 @@ public class CreditBankController {
 
 
     @PostMapping("/offers")
-    public ResponseEntity<String> offers(@RequestBody LoanStatementRequestDto loanStatement) {
+    public ResponseEntity<String> offers(@RequestBody LoanStatementRequestDto loanStatement) throws IOException {
         //LoanOfferDto LoanOfferDto = null;
         //List<LoanOfferDto> loanOffer;
         return ResponseEntity.ok(prescoringService.prescoring(loanStatement).toString());
