@@ -57,7 +57,7 @@ public class PrescoringService {
         BigDecimal monthlyPayment;
         Integer term = loanStatementRequestDto.getTerm();
 
-        // Данные для подсчёта ставки, ежемесячного платежа и пск
+        // Данные для подсчёта ставки, ежемесячного платежа и итоговой суммы займа
         properties.load(new FileReader(propertiesFile));
         BigDecimal baseRate = new BigDecimal(properties.getProperty("base.rate"));
         BigDecimal insuranceRateDecrease = new BigDecimal(properties.getProperty("insurance.rate.decrease"));
