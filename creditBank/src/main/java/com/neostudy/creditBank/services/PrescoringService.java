@@ -16,10 +16,12 @@ import java.util.UUID;
 
 @Service
 public class PrescoringService {
+    private ScoringService scoringService;
     // Сервис для валидации данных с заявки
     ValidateService validateService = new ValidateService();
     // Файл с данными
-    File propertiesFile = new File("C:\\Users\\dieni\\source\\creditBank\\creditBank\\src\\main\\resources\\data.properties");
+    //File propertiesFile = new File("C:\\Users\\dieni\\source\\creditBank\\creditBank\\src\\main\\resources\\data.properties");
+    File propertiesFile = new File("C:\\Users\\Denos\\source\\creditBank\\creditBank\\src\\main\\resources\\data.properties");
     Properties properties = new Properties();
 
     // UUID для всех четырёх предложений
