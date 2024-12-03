@@ -18,12 +18,12 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/calculator")
 @Tag(name = "Контроллер банковского калькулятора", description = "Скоринг и прескоринг данных")
-public class CreditBankController {
+public class CreditBankCalculatorController {
     private final PrescoringService prescoringService;
     private final ScoringService scoringService;
 
     @Autowired
-    public CreditBankController(PrescoringService prescoringService, ScoringService scoringService) {
+    public CreditBankCalculatorController(PrescoringService prescoringService, ScoringService scoringService) {
         this.prescoringService = prescoringService;
         this.scoringService = scoringService;
     }
@@ -33,7 +33,7 @@ public class CreditBankController {
     }*/
 
     @Operation(
-            summary = "Прескоринг",
+            summary = "Прескоринг (расчёт возможных условий кредита)",
             description = "1. По API приходит LoanStatementRequestDto.\n" +
                     "2. На основании LoanStatementRequestDto происходит прескоринг, создаётся 4 кредитных предложения LoanOfferDto на основании всех возможных комбинаций булевских полей isInsuranceEnabled и isSalaryClient (false-false, false-true, true-false, true-true).\n" +
                     "3. Логику формирования кредитных предложений можно придумать самому.\n" +
@@ -46,8 +46,9 @@ public class CreditBankController {
         //List<LoanOfferDto> loanOffer;
         return ResponseEntity.ok(prescoringService.prescoring(loanStatement).toString());
     }
+
     @Operation(
-            summary = "Скоринг",
+            summary = "Скоринг (валидация присланных данных + полный расчет параметров кредита)",
             description = "1. По API приходит ScoringDataDto.\n" +
                     "2. Происходит скоринг данных, высчитывание итоговой ставки(rate), полной стоимости кредита(psk), размер ежемесячного платежа(monthlyPayment), график ежемесячных платежей (List<PaymentScheduleElementDto>). Логику расчета параметров кредита можно найти в интернете, полученный результат сверять с имеющимися в интернете калькуляторами графиков платежей и ПСК.\n" +
                     "3. Ответ на API - CreditDto, насыщенный всеми рассчитанными параметрами."
