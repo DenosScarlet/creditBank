@@ -1,5 +1,7 @@
 package com.neostudy.creditBank.dto;
 
+import com.neostudy.creditBank.enums.Gender;
+import com.neostudy.creditBank.enums.MaritalStatus;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -12,13 +14,13 @@ public class ScoringDataDto {
     private String firstName;
     private String lastName;
     private String middleName;
-    private Enum gender;
+    private Gender gender;
     private LocalDate birthdate;
     private String passportSeries;
     private String passportNumber;
     private LocalDate passportIssueDate;
     private String passportIssueBranch;
-    private Enum maritalStatus;
+    private MaritalStatus maritalStatus;
     private Integer dependentAmount;
     private EmploymentDto employment;
     private String accountNumber;
