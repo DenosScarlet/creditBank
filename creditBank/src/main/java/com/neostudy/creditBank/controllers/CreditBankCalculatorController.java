@@ -27,10 +27,6 @@ public class CreditBankCalculatorController {
         this.prescoringService = prescoringService;
         this.scoringService = scoringService;
     }
-    /*@Autowired
-    public CreditBankController(ScoringService scoringService) {
-        this.scoringService = scoringService;
-    }*/
 
     @Operation(
             summary = "Прескоринг (расчёт возможных условий кредита)",
@@ -42,8 +38,6 @@ public class CreditBankCalculatorController {
     )
     @PostMapping("/offers")
     public ResponseEntity<String> offers(@RequestBody LoanStatementRequestDto loanStatement) throws IOException {
-        //LoanOfferDto LoanOfferDto = null;
-        //List<LoanOfferDto> loanOffer;
         return ResponseEntity.ok(prescoringService.prescoring(loanStatement).toString());
     }
 
@@ -54,7 +48,7 @@ public class CreditBankCalculatorController {
                     "3. Ответ на API - CreditDto, насыщенный всеми рассчитанными параметрами."
     )
     @PostMapping("/calc")
-    public ResponseEntity<String> calc(@RequestBody ScoringDataDto scoringData) {
+    public ResponseEntity<String> calc(@RequestBody ScoringDataDto scoringData) throws IOException {
         return ResponseEntity.ok(scoringService.scoring(scoringData).toString());
     }
 

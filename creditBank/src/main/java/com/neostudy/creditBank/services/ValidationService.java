@@ -14,17 +14,17 @@ import java.util.regex.Pattern;
 @Service
 public class ValidationService {
     // Данные для прескоринга и скоринга
-    static final Pattern namePattern = Pattern.compile("^[a-zA-Z]{2,30}$");
-    static final Pattern emailPattern = Pattern.compile("^[a-z0-9A-Z_!#$%&'*+/=?`{|}~^.-]+@[a-z0-9A-Z.-]+$");
-    static final Pattern passportSeriesPattern = Pattern.compile("^\\d{4}$");
-    static final Pattern passportNumberPattern = Pattern.compile("^\\d{6}$");
+    private static final Pattern namePattern = Pattern.compile("^[a-zA-Z]{2,30}$");
+    private static final Pattern emailPattern = Pattern.compile("^[a-z0-9A-Z_!#$%&'*+/=?`{|}~^.-]+@[a-z0-9A-Z.-]+$");
+    private static final Pattern passportSeriesPattern = Pattern.compile("^\\d{4}$");
+    private static final Pattern passportNumberPattern = Pattern.compile("^\\d{6}$");
     private static final Pattern PASSPORT_BRANCH_PATTERN = Pattern.compile("^\\d{3}-\\d{3}$");
     private static final Pattern ACCOUNT_NUMBER_PATTERN = Pattern.compile("^\\d{20}$");
     private static final Pattern EMPLOYER_INN_PATTERN = Pattern.compile("^\\d{12}$");
     private static final BigDecimal MIN_SALARY = BigDecimal.valueOf(10_000);
-    static final BigDecimal minAmount = BigDecimal.valueOf(20000);
-    static final int minTerm = 6;
-    static final int minAge = 18;
+    private static final BigDecimal minAmount = BigDecimal.valueOf(20000);
+    private static final int minTerm = 6;
+    private static final int minAge = 18;
 
     // Валидация данных для прескоринга
     public void validateAll(LoanStatementRequestDto loanStatementRequestDto) {
@@ -40,6 +40,7 @@ public class ValidationService {
         validateTerm(loanStatementRequestDto.getTerm());
         validatePassport(loanStatementRequestDto.getPassportSeries(), loanStatementRequestDto.getPassportNumber());
     }
+
     // Валидация данных для скоринга
     public void validateAll(ScoringDataDto scoringDataDto) {
         validateAmount(scoringDataDto.getAmount());

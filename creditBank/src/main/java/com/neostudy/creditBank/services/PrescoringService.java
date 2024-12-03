@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 
@@ -42,6 +43,9 @@ public class PrescoringService {
         loanOfferDtos.add(loanOfferDto2);
         loanOfferDtos.add(loanOfferDto3);
         loanOfferDtos.add(loanOfferDto4);
+
+        loanOfferDtos.sort(Comparator.comparing(LoanOfferDto::getRate).reversed());
+
         return loanOfferDtos;
     }
 
@@ -61,6 +65,7 @@ public class PrescoringService {
         loanOfferDto.setRate(rate);
         loanOfferDto.setIsInsuranceEnabled(isInsuranceEnabled);
         loanOfferDto.setIsSalaryClient(isSalaryClient);
+
 
         return loanOfferDto;
     }
