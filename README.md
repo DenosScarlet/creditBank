@@ -148,7 +148,7 @@ POST: /calculator/calc - валидация присланных данных + 
 }
 ```
 
-![Screenshot_133](https://github.com/user-attachments/assets/5791738a-3a1d-4781-92e4-64a55bd01839)
+![Screenshot_135](https://github.com/user-attachments/assets/741ec9ae-a8f5-4d7b-a3d9-9ee183724995)
 
 Также он сгенерировал таблицу
 ![Screenshot_134](https://github.com/user-attachments/assets/45500c85-6f20-450a-b60e-8772498a7e67)
@@ -190,7 +190,7 @@ POST: /calculator/calc - валидация присланных данных + 
   "isSalaryClient": true
 }
 ```
-![Screenshot_135](https://github.com/user-attachments/assets/741ec9ae-a8f5-4d7b-a3d9-9ee183724995)
+![Screenshot_133](https://github.com/user-attachments/assets/5791738a-3a1d-4781-92e4-64a55bd01839)
 
 Табличку генерировать он отказался :(
 
