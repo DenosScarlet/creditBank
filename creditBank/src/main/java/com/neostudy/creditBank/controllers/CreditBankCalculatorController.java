@@ -5,6 +5,7 @@ import com.neostudy.creditBank.dto.ScoringDataDto;
 import com.neostudy.creditBank.services.PrescoringService;
 import com.neostudy.creditBank.services.ScoringService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +38,7 @@ public class CreditBankCalculatorController {
                     "5. Ответ на API - список из 4х LoanOfferDto от \"худшего\" к \"лучшему\" (чем меньше итоговая ставка, тем лучше)."
     )
     @PostMapping("/offers")
-    public ResponseEntity<String> offers(@RequestBody LoanStatementRequestDto loanStatement) throws IOException {
+    public ResponseEntity<String> offers(@RequestBody @Parameter(description = "Данные клиенты для прескоринга", required = true) LoanStatementRequestDto loanStatement) throws IOException {
         return ResponseEntity.ok(prescoringService.prescoring(loanStatement).toString());
     }
 
@@ -48,7 +49,7 @@ public class CreditBankCalculatorController {
                     "3. Ответ на API - CreditDto, насыщенный всеми рассчитанными параметрами."
     )
     @PostMapping("/calc")
-    public ResponseEntity<String> calc(@RequestBody ScoringDataDto scoringData) throws IOException {
+    public ResponseEntity<String> calc(@RequestBody @Parameter(description = "Данные клиента для скоринга", required = true) ScoringDataDto scoringData) throws IOException {
         return ResponseEntity.ok(scoringService.scoring(scoringData).toString());
     }
 
