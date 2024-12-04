@@ -2,14 +2,18 @@ package com.neostudy.creditBank.dto;
 
 import com.neostudy.creditBank.enums.Gender;
 import com.neostudy.creditBank.enums.MaritalStatus;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Schema(description = "Сущность заявки пользователя на кредит (для скоринга)")
 @Data
 public class ScoringDataDto {
+    @Schema(description = "Сумма кредитования (включая стоимость страховки)", example = "400000")
     private BigDecimal amount;
+    @Schema(description = "Сущность заявки пользователя на кредит (для скоринга)", example = "false")
     private Integer term;
     private String firstName;
     private String lastName;
