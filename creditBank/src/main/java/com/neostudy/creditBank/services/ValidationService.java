@@ -161,12 +161,12 @@ public class ValidationService {
             }
         }
 
-        if (employment.getWorkExperienceTotal() == null || employment.getWorkExperienceTotal() < 0) {
-            throw new IllegalArgumentException("Общий стаж работы должен быть неотрицательным.");
+        if (employment.getWorkExperienceTotal() == null || employment.getWorkExperienceTotal() < 18) {
+            throw new IllegalArgumentException("Общий стаж работы должен быть не менее 18 месяцев.");
         }
 
-        if (employment.getWorkExperienceCurrent() == null || employment.getWorkExperienceCurrent() < 0) {
-            throw new IllegalArgumentException("Текущий опыт работы должен быть неотрицательным.");
+        if (employment.getWorkExperienceCurrent() == null || employment.getWorkExperienceCurrent() < 3) {
+            throw new IllegalArgumentException("Текущий опыт работы должен быть не менее 3 месяцев.");
         }
 
         if (employment.getWorkExperienceCurrent() > employment.getWorkExperienceTotal()) {
