@@ -194,21 +194,24 @@ POST: /calculator/calc - валидация присланных данных + 
 
 Табличку генерировать он отказался :(
 
-### 1.5 Начал документировать API через Swagger
+### 1.5 Задокументировал API через Swagger
 
-Заняться логгированием, тестами и полной документацией пока не успеваю в срок, пока что только вот
+Заняться логгированием и тестами пока не успеваю в срок, пока что только вот
 
 ![image](https://github.com/user-attachments/assets/51e8928b-c8a1-4a96-9be7-88d385c458e8)
 
-![image](https://github.com/user-attachments/assets/307c77b2-3733-4830-bbcc-323c79efbced)
+![image](https://github.com/user-attachments/assets/51065978-f1ee-4150-b234-dc6b762320fd)
 
-![image](https://github.com/user-attachments/assets/61144066-9e8c-41e2-9f98-eb4de13d821a)
+![image](https://github.com/user-attachments/assets/33894273-55c2-4528-aa03-aef60b32c0b3)
 
-![image](https://github.com/user-attachments/assets/f18ab5ea-7d7b-47af-a212-72b57d78922b)
+![image](https://github.com/user-attachments/assets/ace7a77f-2ca5-4971-b87c-802b8128939b)
 
-![image](https://github.com/user-attachments/assets/d79f24ad-3ae1-4741-bc6d-698f5bb2f7b8)
+![image](https://github.com/user-attachments/assets/727a3d24-10d7-4d82-8886-d838f628cbef)
 
-![image](https://github.com/user-attachments/assets/7b11b856-04ba-440c-89b3-7f8b23d36454)
+![image](https://github.com/user-attachments/assets/871aea75-2b9b-4d0d-98e7-cfed1eef350f)
+
+![image](https://github.com/user-attachments/assets/4be67d48-9de0-4d7f-aa19-6560167ffb04)
+
 
 
 
