@@ -1,4 +1,4 @@
-package com.neostudy.creditBank.enums;
+package com.neostudy.calculator.enums;
 
 public enum Gender {
     MALE,

@@ -1,9 +1,9 @@
-package com.neostudy.creditBank.services;
+package com.neostudy.calculator.services;
 
-import com.neostudy.creditBank.dto.EmploymentDto;
-import com.neostudy.creditBank.dto.LoanStatementRequestDto;
-import com.neostudy.creditBank.dto.ScoringDataDto;
-import com.neostudy.creditBank.enums.EmploymentStatus;
+import com.neostudy.calculator.dto.EmploymentDto;
+import com.neostudy.calculator.dto.LoanStatementRequestDto;
+import com.neostudy.calculator.dto.ScoringDataDto;
+import com.neostudy.calculator.enums.EmploymentStatus;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.neostudy</groupId>
-	<artifactId>creditBank</artifactId>
+	<artifactId>calculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>creditBank</name>
+	<name>calculator</name>
 	<description>Проектное задание: Java Development (осенний набор 2024). Бэкенд-приложение с микросервисной архитектурой - прототип небольшого банка.</description>
 	<url/>
 	<licenses>
