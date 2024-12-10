@@ -1,7 +1,7 @@
-package com.neostudy.creditBank.dto;
+package com.neostudy.calculator.dto;
 
-import com.neostudy.creditBank.enums.Gender;
-import com.neostudy.creditBank.enums.MaritalStatus;
+import com.neostudy.calculator.enums.Gender;
+import com.neostudy.calculator.enums.MaritalStatus;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 

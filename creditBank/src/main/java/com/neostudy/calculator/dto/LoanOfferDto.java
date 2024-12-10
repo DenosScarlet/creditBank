@@ -1,4 +1,4 @@
-package com.neostudy.creditBank.dto;
+package com.neostudy.calculator.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

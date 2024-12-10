@@ -1,7 +1,7 @@
-package com.neostudy.creditBank.services;
+package com.neostudy.calculator.services;
 
-import com.neostudy.creditBank.dto.LoanOfferDto;
-import com.neostudy.creditBank.dto.LoanStatementRequestDto;
+import com.neostudy.calculator.dto.LoanOfferDto;
+import com.neostudy.calculator.dto.LoanStatementRequestDto;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

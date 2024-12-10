@@ -1,9 +1,9 @@
-package com.neostudy.creditBank.controllers;
+package com.neostudy.calculator.controllers;
 
-import com.neostudy.creditBank.dto.LoanStatementRequestDto;
-import com.neostudy.creditBank.dto.ScoringDataDto;
-import com.neostudy.creditBank.services.PrescoringService;
-import com.neostudy.creditBank.services.ScoringService;
+import com.neostudy.calculator.dto.LoanStatementRequestDto;
+import com.neostudy.calculator.dto.ScoringDataDto;
+import com.neostudy.calculator.services.PrescoringService;
+import com.neostudy.calculator.services.ScoringService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;

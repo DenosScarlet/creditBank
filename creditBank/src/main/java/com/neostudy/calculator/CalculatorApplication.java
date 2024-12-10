@@ -1,14 +1,14 @@
-package com.neostudy.creditBank;
+package com.neostudy.calculator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-public class CreditBankApplication {
+public class CalculatorApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CreditBankApplication.class, args);
+		SpringApplication.run(CalculatorApplication.class, args);
 	}
 
 }

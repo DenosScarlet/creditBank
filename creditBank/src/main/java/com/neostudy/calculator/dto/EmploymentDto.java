@@ -1,7 +1,7 @@
-package com.neostudy.creditBank.dto;
+package com.neostudy.calculator.dto;
 
-import com.neostudy.creditBank.enums.EmploymentStatus;
-import com.neostudy.creditBank.enums.Position;
+import com.neostudy.calculator.enums.EmploymentStatus;
+import com.neostudy.calculator.enums.Position;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 

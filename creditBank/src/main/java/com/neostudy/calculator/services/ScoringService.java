@@ -1,13 +1,13 @@
-package com.neostudy.creditBank.services;
+package com.neostudy.calculator.services;
 
-import com.neostudy.creditBank.dto.CreditDto;
-import com.neostudy.creditBank.dto.EmploymentDto;
-import com.neostudy.creditBank.dto.PaymentScheduleElementDto;
-import com.neostudy.creditBank.dto.ScoringDataDto;
-import com.neostudy.creditBank.enums.EmploymentStatus;
-import com.neostudy.creditBank.enums.Gender;
-import com.neostudy.creditBank.enums.MaritalStatus;
-import com.neostudy.creditBank.enums.Position;
+import com.neostudy.calculator.dto.CreditDto;
+import com.neostudy.calculator.dto.EmploymentDto;
+import com.neostudy.calculator.dto.PaymentScheduleElementDto;
+import com.neostudy.calculator.dto.ScoringDataDto;
+import com.neostudy.calculator.enums.EmploymentStatus;
+import com.neostudy.calculator.enums.Gender;
+import com.neostudy.calculator.enums.MaritalStatus;
+import com.neostudy.calculator.enums.Position;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -24,7 +24,7 @@ import java.util.Properties;
 @Service
 public class ScoringService {
     // Файл с данными
-    File propertiesFile = new File("creditBank/src/main/resources/data.properties");
+    File propertiesFile = new File("calculator/src/main/resources/data.properties");
     Properties properties = new Properties();
     
     public CreditDto scoring(ScoringDataDto scoringDataDto) throws IOException {

@@ -1,10 +1,10 @@
-package com.neostudy.creditBank;
+package com.neostudy.calculator;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CreditBankApplicationTests {
+class CalculatorApplicationTests {
 
 	@Test
 	void contextLoads() {
