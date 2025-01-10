@@ -5,6 +5,7 @@
 > Я занимаюсь таким большим проектом впервые, поэтому на многие вещи у меня может уходить больше времени, чем предполагалось. :sweat:  
 > Многие технологие, используемые здесь я изучаю первый раз, поскольку в ВУЗе у меня их банально не преподавали, разве что основы Java (сейчас я на 4 курсе ННГАСУ).  
 > В общем, прошу понять и простить за возможные будущие задержки в сдаче заданий. Мне дико нравится этим заниматься, я прям потею над каждым заданием. :nerd_face:
+
 ## MVP Level 1 Реализация микросервиса Калькулятор (calculator)
 ### 1.1 Определена ветка develop, отведённая от main и 2 ветки feature и bugfix, отведённые от develop.
 
@@ -212,8 +213,149 @@ POST: /calculator/calc - валидация присланных данных + 
 
 ![image](https://github.com/user-attachments/assets/4be67d48-9de0-4d7f-aa19-6560167ffb04)
 
+## MVP Level 2 Реализация микросервиса Сделка (deal)
 
+### 2.1. Инициализировал Spring-Boot приложение deal
 
+### 2.2. Определил сущности для БД
 
+![image](https://github.com/user-attachments/assets/2afcd66a-9642-4172-8e52-03903aeee1f8)
+
+Сущность _Client_
+```Java
+@Entity
+@Accessors(chain = true)
+@Data
+@Table(name = "client")
+public class Client {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID client_id;
+
+    @Column(name = "last_name")
+    private String last_name;
+
+    @Column(name = "first_name")
+    private String first_name;
+
+    @Column(name = "middle_name")
+    private String middle_name;
+
+    @Column(name = "birth_date")
+    private Date birth_date;
+
+    @Column(name = "email")
+    private String email;
+
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "gender")
+    private Gender gender;
+
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "marital_status")
+    private MaritalStatus marital_status;
+
+    @Column(name = "dependentAmount")
+    private BigInteger dependentAmount;
+
+    @Column(columnDefinition = "jsonb", name = "passport_id")
+    private String passport_id;
+
+    @Column(columnDefinition = "jsonb", name = "employment_id")
+    private String employment_id;
+
+    @Column(name = "accountNumber")
+    private String accountNumber;
+}
+```
+
+Сущность _Statement_
+
+```Java
+@Entity
+@Accessors(chain = true)
+@Data
+@Table(name = "statement")
+public class Statement {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID statement_id;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_id", foreignKey = @ForeignKey(name = "fk_statement_client_id"))
+    private Client client;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "credit_id", foreignKey = @ForeignKey(name = "fk_statement_credit_id"))
+    private Credit credit;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private ApplicationStatus status;
+
+    @Column(name = "creation_date")
+    private Timestamp creation_date;
+
+    @Column(columnDefinition = "jsonb", name = "applied_offer")
+    private String applied_offer;
+
+    @Column(name = "sign_date")
+    private Timestamp sign_date;
+
+    @Column(name = "ses_code")
+    private String ses_code;
+
+    @Column(columnDefinition = "jsonb", name = "status_history")
+    private String status_history;
+}
+```
+
+Сущность _Credit_
+
+```Java
+@Entity
+@Accessors(chain = true)
+@Data
+@Table(name = "credit")
+public class Credit {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID credit_id;
+
+    @Column(name = "amount")
+    private BigDecimal amount;
+
+    @Column(name = "term")
+    private Integer term;
+
+    @Column(name = "monthly_payment")
+    private BigDecimal monthly_payment;
+
+    @Column(name = "rate")
+    private BigDecimal rate;
+
+    @Column(name = "psk")
+    private BigDecimal psk;
+
+    @Column(columnDefinition = "jsonb", name = "payment_schedule")
+    private String payment_schedule;
+
+    @Column(name = "insurance_enabled")
+    private Boolean insurance_enabled;
+
+    @Column(name = "salary_client")
+    private Boolean salary_client;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "credit_status")
+    private CreditStatus credit_status;
+}
+```
+### 2.3. Подключил проект к СУБД Postgres
+Итог после запуска приложения:
+
+![image](https://github.com/user-attachments/assets/7cd2c718-51aa-4355-893a-9585a4f30a5b)
+
+(Я не знаю почему на схеме Postgre нарисовали связи один ко многим, хотя я явно указывал 1 к 1)
 
 
